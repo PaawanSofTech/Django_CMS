@@ -1,0 +1,301 @@
+{% extends "main.html" %}
+{%block content%}
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin | Dashboard</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width">        
+  <link rel="stylesheet" href="css/softech_main.css">
+  <link rel="shortcut icon" href="OS.png">
+</head>
+<body>
+<div id="searchableContent">
+  <div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+      <a class="logo" href="banner-03.png">
+         <img src="banner-03.png" style="height: 100px;" alt="Logo"> 
+      </a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button> 
+    </div>  
+    </div>
+    <div class="template-page-wrapper">
+      <div class="navbar-collapse collapse SofTech-sidebar">
+        <ul class="SofTech-sidebar-menu">
+          <li>
+            <form class="navbar-form" id="searchForm">
+              <input type="text" class="form-control" id="templatemo_search_box" placeholder="Search...">
+              <button type="button" class="btn btn-default" onclick="searchWebsite()">Go</button>
+            </form>
+          </li>
+          <li class="active"><a href="#"><i class="fa fa-home"></i>Dashboard</a></li>
+          <li><a href="data-visualization.html"><i class="fa fa-cubes"></i><span class="badge pull-right">9</span>Data Visualization</a></li>
+          <li><a href="maps.html"><i class="fa fa-map-marker"></i><span class="badge pull-right">42</span>Maps</a></li>
+          <li><a href="tables.html"><i class="fa fa-users"></i><span class="badge pull-right">NEW</span>Manage Users</a></li>
+          <li><a href="preferences.html"><i class="fa fa-cog"></i>Preferences</a></li>
+          <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+        </ul>
+      </div>
+
+      <div class="SofTech-content-wrapper">
+        <div class="SofTech-content">
+          <ol class="breadcrumb">
+            <li><a href="index.html">Admin Panel</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li class="active">Overview</li>
+          </ol>
+          <div class="margin-bottom-30">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="nav nav-pills">
+                  <li class="active"><a href="#">Home <span class="badge">42</span></a></li>
+                  <li class="active"><a href="#">Profile <span class="badge">126</span></a></li>
+                  <li class="active"><a href="#">Messages <span class="badge">14</span></a></li>
+                </ul>          
+              </div>
+            </div>
+          </div>         
+
+          <div class="SofTech-panels">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 margin-bottom-30">
+                <div class="panel panel-success">
+                  <div class="panel-heading">Data Visualization</div>
+                  <canvas id="SofTech-line-chart" height="120" width="500"></canvas>
+                </div> 
+                <span class="btn btn-success"><a href="data-visualization.html">More Charts</a></span>
+              </div>   
+              <div class="col-md-6 col-sm-6 margin-bottom-30">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">User Table</div>
+                  <div class="panel-body">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Sr. No.</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Username</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Paawan</td>
+                          <td>Sharma</td>
+                          <td>SofTech_1501</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Pranav</td>
+                          <td>Agarwal</td>
+                          <td>Pranav__Agarwal21</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Gunjan</td>
+                          <td>Sharma</td>
+                          <td>_07_gunjan</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Anjna</td>
+                          <td>Jariwal</td>
+                          <td>Anjna_Jariwal</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <span class="btn btn-primary"><a href="tables.html">See Tables</a></span>
+              </div>       
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+               
+                <ul class="nav nav-tabs" role="tablist" id="SofTech-tabs">
+                  <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+                  <li><a href="#profile" role="tab" data-toggle="tab">Profile</a></li>
+                  <li><a href="#messages" role="tab" data-toggle="tab">Messages</a></li>
+                  <li><a href="#settings" role="tab" data-toggle="tab">Settings</a></li>
+                </ul>
+
+                <div class="tab-content">
+                  <div class="tab-pane fade in active" id="home">
+                    <h3>To-Do List</h3>
+                    <ul class="list-group">
+                      <li class="list-group-item"><input type="checkbox" name="" value=""> Task 1</li>
+                      <li class="list-group-item"><input type="checkbox" name="" value=""> Task 2</li>
+                      <li class="list-group-item"><input type="checkbox" name="" value=""> Task 3</li>
+                      <li class="list-group-item"><input type="checkbox" name="" value=""> Task 4</li>
+                      <li class="list-group-item"><input type="checkbox" name="" value=""> Task 5</li>
+                    </ul>
+                  </div>
+                </div>
+              </div> 
+
+              <div class="col-md-6 col-sm-6">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                      Item 1
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    Explore the wonders of nature and experience the thrill of adventure. Discover hidden trails and breathtaking landscapes, where every step brings you closer to the beauty of the outdoors.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                      Item 2
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Immerse yourself in the vibrant rhythms of local cultures. From lively street markets to traditional dances, experience the richness and diversity that each community has to offer.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                      Item 3
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">
+                        Click here
+                    </button> to explore exciting features and discover new possibilities.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+         
+            </div> 
+          </div>    
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Are you sure you want to sign out?</h4>
+            </div>
+            <div class="modal-footer">
+              <a href="sign-in.html" class="btn btn-primary">Yes</a>
+              <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+<!-- <script>
+  function searchWebsite() {
+
+    var searchTerm = document.getElementById('templatemo_search_box').value.toLowerCase();
+
+    var content = document.getElementById('searchableContent').innerHTML.toLowerCase();
+
+    if (content.includes(searchTerm)) {
+      alert('Search term found!');
+    } else {
+      alert('Search term not found.');
+    }
+    
+    var regex = new RegExp(searchTerm, 'gi');
+
+    var highlightedContent = content.replace(regex, match => `<span class="highlight">${match}</span>`);
+
+    document.getElementById('searchableContent').innerHTML = highlightedContent;
+  }
+</script> -->
+
+<style>
+  .highlight {
+    background-color: yellow;
+    font-weight: bold;
+  }
+</style>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/templatemo_script.js"></script>
+    <script type="text/javascript">
+    // Line chart
+    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+    var lineChartData = {
+      labels : ["January","February","March","April","May","June","July"],
+      datasets : [
+      {
+        label: "My First dataset",
+        fillColor : "rgba(220,220,220,0.2)",
+        strokeColor : "rgba(220,220,220,1)",
+        pointColor : "rgba(220,220,220,1)",
+        pointStrokeColor : "#fff",
+        pointHighlightFill : "#fff",
+        pointHighlightStroke : "rgba(220,220,220,1)",
+        data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+      },
+      {
+        label: "My Second dataset",
+        fillColor : "rgba(151,187,205,0.2)",
+        strokeColor : "rgba(151,187,205,1)",
+        pointColor : "rgba(151,187,205,1)",
+        pointStrokeColor : "#fff",
+        pointHighlightFill : "#fff",
+        pointHighlightStroke : "rgba(151,187,205,1)",
+        data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+      }
+      ]
+
+    }
+
+    window.onload = function(){
+      var ctx_line = document.getElementById("SofTech-line-chart").getContext("2d");
+      window.myLine = new Chart(ctx_line).Line(lineChartData, {
+        responsive: true
+      });
+    };
+
+    $('#myTab a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    });
+
+    $('#loading-example-btn').click(function () {
+      var btn = $(this);
+      btn.button('loading');
+      // $.ajax(...).always(function () {
+      //   btn.button('reset');
+      // });
+  });
+
+
+  </script>
+</body>
+</html>
+{%endblock content%}
